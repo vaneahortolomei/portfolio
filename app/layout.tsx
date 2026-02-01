@@ -1,9 +1,10 @@
+import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
-import React from 'react'
 import { MantineProvider } from '@mantine/core'
+import { AppShellLayout } from '@/components/layout/AppShellLayout'
 import '@mantine/core/styles.css'
+import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,14 +27,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body style={{ background: '#000000' }}>
+      <body>
         <MantineProvider
           theme={{
             fontFamily: 'var(--font-inter)',
           }}
           defaultColorScheme="light"
         >
-          {children}
+          <AppShellLayout>{children}</AppShellLayout>
         </MantineProvider>
       </body>
     </html>
