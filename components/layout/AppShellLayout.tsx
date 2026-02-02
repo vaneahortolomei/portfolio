@@ -6,14 +6,18 @@ import { Footer } from './Footer'
 
 export const AppShellLayout = ({ children }: React.PropsWithChildren) => {
   return (
-    <AppShell header={{ height: 80 }} footer={{ height: 120 }}>
-      <AppShell.Header>
+    <AppShell
+      header={{ height: 180 }}
+      footer={{ height: 120 }}
+      withBorder={false}
+    >
+      <AppShell.Header pos={'relative'}>
         <Header />
       </AppShell.Header>
 
-      <AppShell.Main>{children}</AppShell.Main>
+      <AppShell.Main p={0}>{children}</AppShell.Main>
 
-      <AppShell.Footer>
+      <AppShell.Footer pos={'relative'}>
         <Footer />
       </AppShell.Footer>
     </AppShell>
