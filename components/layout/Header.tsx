@@ -14,7 +14,7 @@ export const Header = () => {
         <Box hiddenFrom={'lg'}>
           <SwitchLanguage />
         </Box>
-        <Logo />
+        <Logo variant={'header'} />
         <Box hiddenFrom={'lg'}>
           <MobileNav />
         </Box>

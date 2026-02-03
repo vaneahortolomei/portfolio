@@ -1,6 +1,10 @@
 import Link from 'next/link'
 
-export const NavLinks = () => {
+type NavLinksProps = {
+  variant?: string
+}
+
+export const NavLinks = ({ variant }: NavLinksProps) => {
   const nav = [
     { href: '/#works', label: 'works' },
     { href: '/#about', label: 'about' },
@@ -9,7 +13,7 @@ export const NavLinks = () => {
   ] as const
 
   return (
-    <ul className="nav-menu">
+    <ul className={variant === 'footer' ? 'footer-nav-menu' : 'nav-menu'}>
       {nav.map((item) => (
         <li key={item.label} className="nav-menu__item">
           <Link className="nav-menu__link" href={item.href}>
