@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type LogoProps = {
-  variant: string
+  variant?: string
 }
 
 export const Logo = ({ variant }: LogoProps) => {
