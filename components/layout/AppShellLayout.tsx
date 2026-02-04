@@ -7,7 +7,7 @@ import { Footer } from './footer/Footer'
 export const AppShellLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <AppShell
-      header={{ height: 180 }}
+      header={{ height: { base: 100, lg: 180 } }}
       footer={{ height: 'auto' }}
       withBorder={false}
     >

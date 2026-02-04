@@ -1,3 +1,7 @@
+/*a, p {*/
+/*  font-size: 18px!important;*/
+/*}*/
+
 /*Linking styles for navigation menu *!*/
 
 .nav-menu {
@@ -82,10 +86,15 @@
 
 .footer-nav__link {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   font-weight: 500;
   transition: color 200ms ease;
+}
+
+.footer-nav__link-mark {
+  color: #e29c54;
+  margin-left: 1px;
 }
 
 .footer-nav__link:hover {
