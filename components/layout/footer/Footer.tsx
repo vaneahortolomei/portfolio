@@ -1,6 +1,6 @@
 'use client'
 
-import { Group, Flex, Text, Container, List } from '@mantine/core'
+import { Group, Flex, Text, Container } from '@mantine/core'
 import { FooterAddress, FooterNavLinks } from '@/components/layout/footer'
 import { NavLinks } from '@/components/layout/NavLinks'
 import { Logo } from '@/components/layout/Logo'
@@ -22,7 +22,9 @@ export const Footer = () => {
           </Group>
         </Flex>
         <Flex align={'center'} justify={'space-between'} w={'100%'}>
-          <Text c={'#fff'}>© Hortdesignandfineart {year}</Text>
+          <Text c={'#fff'} fz={14}>
+            © Hortdesignandfineart {year}
+          </Text>
           <FooterNavLinks />
         </Flex>
       </Group>
