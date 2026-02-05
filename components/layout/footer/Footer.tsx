@@ -10,7 +10,7 @@ export const Footer = () => {
   const year = today.getFullYear()
 
   return (
-    <Container size={1800}>
+    <Container size={1152}>
       <Group p={'20px 0'} className={'footer'}>
         <Flex align={'center'} justify={'space-between'} w={'100%'}>
           <Logo variant={'footer'} />

@@ -9,7 +9,7 @@ import { Container, Flex, Box } from '@mantine/core'
 
 export const Header = () => {
   return (
-    <Container size={1800}>
+    <Container size={1152}>
       <Flex align={'center'} justify="space-between" pt={{ base: 15, lg: 100 }}>
         <Box hiddenFrom={'lg'}>
           <SwitchLanguage />

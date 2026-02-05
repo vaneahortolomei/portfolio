@@ -1,0 +1,138 @@
+.root {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  border: 0;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9aa0a6;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+  transition:
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.tab:hover {
+  color: #141626;
+  transform: translateX(2px);
+}
+
+.tab[data-active] {
+  color: #141626;
+  font-weight: 700;
+}
+
+.tab[disabled] {
+  color: #dadcde;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+
+.tab[aria-selected='true'] {
+  color: #141626;
+  font-weight: 700;
+}
+
+.tab span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    background-color 150ms ease;
+}
+
+.arrowVisible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
+}
+
+.arrow:hover {
+  transition: all 150ms ease;
+  border: 1px solid #e29c54;
+}
+
+.arrow svg {
+  will-change: transform;
+  animation: arrowNudge 1.4s ease-in-out infinite;
+}
+
+.arrow:not(.arrowVisible) svg {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow svg {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@keyframes arrowNudge {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.accordion {
+  padding: 0;
+  color: #9aa0a6;
+}
+
+.accordion span {
+  position: relative;
+  font-weight: 500;
+}
+
+.accordion[data-active] {
+  color: #141626;
+}
+
+/* если disabled */
+.accordion[data-disabled] {
+  color: #c4c4c4;
+  cursor: not-allowed;
+}
