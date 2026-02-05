@@ -1,7 +1,3 @@
-/*a, p {*/
-/*  font-size: 18px!important;*/
-/*}*/
-
 /*Linking styles for navigation menu *!*/
 
 .nav-menu {
@@ -60,6 +56,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .address__icon {
   color: #fff;
 }
@@ -101,9 +98,34 @@
   color: #e29c54;
 }
 
+/*Styles for hero*/
+
+.hero-title {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero-title,
+.hero-title__mark {
+  font-size: 35px;
+  word-break: break-word;
+}
+
+.hero-img {
+  margin: 0 auto;
+}
+
+/*-------Media--------*/
+
 @media (max-width: 1200px) {
   .logo {
     width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    max-width: 700px;
   }
 }
 
@@ -119,5 +141,37 @@
 
   .footer-nav-menu {
     display: block;
+  }
+
+  .hero-title {
+    padding-right: 100px;
+    max-width: initial;
+    margin: 0;
+  }
+
+  .hero-title,
+  .hero-title__mark {
+    font-size: 50px;
+  }
+
+  .hero-img {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-title {
+    padding-right: 100px;
+  }
+
+  .hero-title,
+  .hero-title__mark {
+    font-size: 65px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-title {
+    padding-right: 200px;
   }
 }

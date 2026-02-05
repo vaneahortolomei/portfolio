@@ -23,20 +23,19 @@ export const Hero = () => {
             mt={{ base: -220, lg: 0 }}
           >
             <Title
+              className={'hero-title'}
               fw={400}
               lh={1.2}
               ta={{ base: 'center', lg: 'left' }}
-              fz={{ base: 35, lg: 65 }}
               pt={{ base: 0, lg: 150 }}
-              pr={{ base: 0, lg: 200 }}
               style={{ lineHeight: 1.2 }}
             >
               I create Clarity through{' '}
               <Text
+                className={'hero-title__mark'}
                 span
                 fw={400}
                 lh={1.2}
-                fz={{ base: 35, lg: 65 }}
                 c={'#e29c54'}
               >
                 design.
@@ -73,11 +72,12 @@ export const Hero = () => {
           </Grid.Col>
           <Grid.Col span={{ base: 12, lg: 6 }} order={{ base: 1, lg: 2 }}>
             <Image
+              className={'hero-img'}
               src={'/portrait.png'}
               width={850}
               height={1400}
               alt={''}
-              style={{ height: 'auto', maxWidth: '100%' }}
+              style={{ height: 'auto', maxWidth: '100%', display: 'block' }}
             />
           </Grid.Col>
         </Grid>
