@@ -1,24 +1,18 @@
 import { Tabs } from '@mantine/core'
-import classes from '@/components/sections/home/categories/CategoriesTabs.module.css'
-import { categories, categoriesPreviews } from '@/data/categories'
-import Link from 'next/link'
-import clsx from 'clsx'
-import { IconArrowUpRight } from '@tabler/icons-react'
+import classes from '@/components/ui/TabsNav/TabsNav.module.css'
 import Image from 'next/image'
-import { Dispatch, SetStateAction } from 'react'
+import { TabsNavProps } from '@/components/ui/TabsNav/types'
+import { IconLink } from '@/components/ui/IconLink'
 
-type CategoryTabsProps = {
-  active: string | null
-  setActive: Dispatch<SetStateAction<string | null>>
-}
+export const TabsNav = (props: TabsNavProps) => {
+  const { value, active, setActive, withLink, data } = props
 
-export const CategoryTabs = ({ active, setActive }: CategoryTabsProps) => {
   return (
     <Tabs
       value={active}
       onChange={setActive}
       unstyled
-      defaultValue="Branding"
+      defaultValue={value}
       orientation="vertical"
       w={'100%'}
       classNames={{
@@ -29,7 +23,7 @@ export const CategoryTabs = ({ active, setActive }: CategoryTabsProps) => {
       }}
     >
       <Tabs.List style={{ gap: 20, alignItems: 'flex-start' }}>
-        {categories.map((c) => {
+        {data.map((c) => {
           const isActive = active === c.title
 
           return (
@@ -44,28 +38,28 @@ export const CategoryTabs = ({ active, setActive }: CategoryTabsProps) => {
               disabled={c.disabled}
             >
               <span>{c.title}</span>
-              <Link
-                onClick={(e) => e.stopPropagation()}
-                aria-label={`Open ${c.title}`}
-                href={`/${c.slug}`}
-                className={clsx(classes.arrow, {
-                  [classes.arrowVisible]: isActive && !c.disabled,
-                })}
-              >
-                <IconArrowUpRight size={18} stroke={1.5} />
-              </Link>
+              {withLink && (
+                <IconLink
+                  isActive={isActive}
+                  title={c.title}
+                  slug={c.slug ?? ''}
+                  disabled={c.disabled ?? false}
+                />
+              )}
             </Tabs.Tab>
           )
         })}
       </Tabs.List>
-      {categoriesPreviews.map((prev) => (
+      {data.map((prev) => (
         <Tabs.Panel key={prev.title} value={prev.title} w={'100%'}>
           <Image
             src={prev.src}
             alt=""
             width={250}
             height={350}
+            sizes="(min-width: 768px) 100vw, 350px"
             loading={'eager'}
+            quality={95}
             style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
           />
         </Tabs.Panel>
