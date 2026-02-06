@@ -1,0 +1,19 @@
+.accordion {
+  padding: 0;
+  color: #9aa0a6;
+}
+
+.accordion span {
+  position: relative;
+  font-weight: 500;
+}
+
+.accordion[data-active] {
+  color: #141626;
+}
+
+/* если disabled */
+.accordion[data-disabled] {
+  color: #c4c4c4;
+  cursor: not-allowed;
+}

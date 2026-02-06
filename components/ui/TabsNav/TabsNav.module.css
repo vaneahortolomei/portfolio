@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  border: 0;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9aa0a6;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.1;
+  transition:
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.tab:hover {
+  color: #141626;
+  transform: translateX(2px);
+}
+
+.tab[data-active] {
+  color: #141626;
+  font-weight: 700;
+}
+
+.tab[disabled] {
+  color: #dadcde;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+
+.tab[aria-selected='true'] {
+  color: #141626;
+  font-weight: 700;
+}
+
+.tab span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+}

@@ -1,21 +1,12 @@
-import { Dispatch, SetStateAction } from 'react'
+import { IconLink } from '@/components/ui/IconLink'
 import { Accordion } from '@mantine/core'
-import { categories } from '@/data/categories'
-import classes from '@/components/sections/home/categories/CategoriesTabs.module.css'
-import Link from 'next/link'
-import clsx from 'clsx'
-import { IconArrowUpRight } from '@tabler/icons-react'
 import Image from 'next/image'
+import { AccordionNavProps } from '@/components/ui/AccordionNav/types'
+import classes from '@/components/ui/AccordionNav/AccordionNav.module.css'
 
-type CategoryAccordionProps = {
-  active: string | null
-  setActive: Dispatch<SetStateAction<string | null>>
-}
+export const AccordionNav = (props: AccordionNavProps) => {
+  const { value, active, setActive, withLink, data } = props
 
-export const CategoryAccordion = ({
-  active,
-  setActive,
-}: CategoryAccordionProps) => {
   return (
     <Accordion
       styles={{
@@ -28,9 +19,9 @@ export const CategoryAccordion = ({
       chevron={null}
       variant="unstyled"
       radius="md"
-      defaultValue="Branding"
+      defaultValue={value}
     >
-      {categories.map((c) => {
+      {data.map((c) => {
         const isActive = active === c.title
 
         return (
@@ -40,16 +31,14 @@ export const CategoryAccordion = ({
               disabled={c.disabled}
             >
               <span>{c.title}</span>
-              <Link
-                onClick={(e) => e.stopPropagation()}
-                aria-label={`Open ${c.title}`}
-                href={`/${c.slug}`}
-                className={clsx(classes.arrow, {
-                  [classes.arrowVisible]: isActive && !c.disabled,
-                })}
-              >
-                <IconArrowUpRight size={18} stroke={1.5} />
-              </Link>
+              {withLink && (
+                <IconLink
+                  isActive={isActive}
+                  title={c.title}
+                  slug={c.slug}
+                  disabled={c.disabled}
+                />
+              )}
             </Accordion.Control>
             <Accordion.Panel>
               <Image

@@ -1,5 +1,5 @@
 import { Hero } from '@/components/sections/home/Hero'
-import { Categories } from '@/components/sections/home/categories/Categories'
+import { Categories } from '@/components/sections/home/Categories'
 
 export default function Home() {
   return (

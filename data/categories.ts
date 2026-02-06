@@ -10,20 +10,17 @@ export const categories = [
     src: '/portrait.png',
   },
   { slug: 'fine-art', title: 'FineArt', disabled: true, src: './window.svg' },
-] as const
-
-export const categoriesPreviews = [
-  { title: 'Branding', src: '/tab1.png' },
-  { title: 'Broshures', src: '/tab2.png' },
-  { title: 'UI/UX', src: '/tab3.png' },
-  { title: 'Sketches', src: '/tab4.jpg' },
-  { title: 'Creatives', src: '/portrait.png' },
-  { title: 'FineArt', src: './window.svg' },
 ]
 
 export const brandingCategories = [
-  { slug: 'houts', title: 'HOUTS' },
-  { slug: 'polar', title: 'Polar' },
-  { slug: 'berglicht', title: 'Berglicht' },
-  { slug: 'voxel-sounds', title: 'Voxel sounds' },
-] as const
+  { slug: 'houts', title: 'HOUTS', disabled: false },
+  { slug: 'polar', title: 'Polar', disabled: false },
+  { slug: 'berglicht', title: 'Berglicht', disabled: false },
+  { slug: 'voxel-sounds', title: 'Voxel sounds', disabled: false },
+]
+
+export const resumeList = [
+  { title: 'CV', src: '/CV.png', disabled: false },
+  { title: 'Certificates', src: '/atestat.png', disabled: false },
+  { title: 'Degree', src: '/tab3.png', disabled: false },
+]

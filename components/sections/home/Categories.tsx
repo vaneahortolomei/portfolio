@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import { Container, Title, Box } from '@mantine/core'
-import { CategoryAccordion } from '@/components/sections/home/categories/CategoryAccordion'
-import { CategoryTabs } from '@/components/sections/home/categories/CategoryTabs'
+import { TabsNav } from '../../ui/TabsNav'
+import { AccordionNav } from '../../ui/AccordionNav'
+import { categories } from '@/data/categories'
 
 export const Categories = () => {
   const [active, setActive] = useState<string | null>('Branding')
@@ -15,10 +16,22 @@ export const Categories = () => {
         </Title>
         <>
           <Box visibleFrom={'lg'} mt={50} mb={50}>
-            <CategoryTabs active={active} setActive={setActive} />
+            <TabsNav
+              value={'Branding'}
+              active={active}
+              setActive={setActive}
+              withLink={true}
+              data={categories}
+            />
           </Box>
           <Box hiddenFrom={'lg'} mt={10} mb={50}>
-            <CategoryAccordion active={active} setActive={setActive} />
+            <AccordionNav
+              value={'Branding'}
+              active={active}
+              setActive={setActive}
+              withLink={true}
+              data={categories}
+            />
           </Box>
         </>
       </Container>

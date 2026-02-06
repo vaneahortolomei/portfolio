@@ -57,6 +57,7 @@ export const Hero = () => {
                 height={220}
                 style={{ height: 'auto', maxWidth: '100%' }}
                 alt={''}
+                loading="eager"
               ></Image>
             </Flex>
           </Grid.Col>
@@ -67,6 +68,7 @@ export const Hero = () => {
               width={850}
               height={1400}
               alt={''}
+              loading="eager"
               style={{ height: 'auto', maxWidth: '100%', display: 'block' }}
             />
           </Grid.Col>
