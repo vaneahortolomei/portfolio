@@ -35,7 +35,7 @@ export const AccordionNav = (props: AccordionNavProps) => {
                 <IconLink
                   isActive={isActive}
                   title={c.title}
-                  slug={c.slug}
+                  slug={c.slug ?? ''}
                   disabled={c.disabled}
                 />
               )}
@@ -46,7 +46,9 @@ export const AccordionNav = (props: AccordionNavProps) => {
                 alt=""
                 width={250}
                 height={350}
+                sizes="(min-width: 768px) 100vw, 350px"
                 loading={'eager'}
+                quality={95}
                 style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
               />
             </Accordion.Panel>

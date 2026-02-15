@@ -1,12 +1,14 @@
 .root {
   display: flex;
-  gap: 80px;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
   align-items: flex-start;
   border: 0;
@@ -53,4 +55,22 @@
   align-items: center;
   gap: 10px;
   padding-right: 20px;
+}
+
+.resumeHero img {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 1200px) {
+  .root {
+    flex-direction: row;
+    gap: 80px;
+    margin-top: 0;
+  }
+
+  .list {
+    flex-direction: column;
+  }
 }
