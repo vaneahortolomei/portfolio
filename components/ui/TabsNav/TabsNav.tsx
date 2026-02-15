@@ -3,9 +3,11 @@ import classes from '@/components/ui/TabsNav/TabsNav.module.css'
 import Image from 'next/image'
 import { TabsNavProps } from '@/components/ui/TabsNav/types'
 import { IconLink } from '@/components/ui/IconLink'
+// import { useMediaQuery } from '@mantine/hooks';
 
 export const TabsNav = (props: TabsNavProps) => {
   const { value, active, setActive, withLink, data } = props
+  // const isDesktop = useMediaQuery('(min-width: 62em)');
 
   return (
     <Tabs
@@ -13,7 +15,6 @@ export const TabsNav = (props: TabsNavProps) => {
       onChange={setActive}
       unstyled
       defaultValue={value}
-      orientation="vertical"
       w={'100%'}
       classNames={{
         root: classes.root,

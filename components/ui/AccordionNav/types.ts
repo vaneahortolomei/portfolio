@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export type TabsNavItem = {
-  slug: string
+  slug?: string
   title: string
   src: string
   disabled: boolean
