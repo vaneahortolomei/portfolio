@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { MantineProvider } from '@mantine/core'
 import { AppShellLayout } from '@/components/layout/AppShellLayout'
 import '@mantine/core/styles.css'
+import '@mantine/carousel/styles.css'
 import './globals.css'
 
 const inter = Inter({
